@@ -3,6 +3,7 @@ import plotly.graph_objects as graph
 import numpy as np
 import pandas as pd
 import  matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 import sympy as sp
 
 
@@ -236,6 +237,83 @@ Estos teoremas son esenciales en el estudio y la aplicación del producto escala
 
 
 
+
+# Definir los vectores
+vector1 = np.array([2, 3])
+vector2 = np.array([-1, 4])
+
+# Definir un escalar
+escalar = 2
+
+# Calcular la suma de los vectores
+suma = vector1 + vector2
+
+# Calcular la resta de los vectores
+resta = vector1 - vector2
+
+# Calcular la multiplicación por escalar
+mult_escalar = escalar * vector1
+
+# Crear una figura y ejes para la suma
+fig1, ax1 = plt.subplots()
+
+# Graficar la suma de los vectores
+ax1.quiver(0, 0, vector1[0], vector1[1], angles='xy', scale_units='xy', scale=1, color='r', label='Vector 1')
+ax1.quiver(0, 0, vector2[0], vector2[1], angles='xy', scale_units='xy', scale=1, color='b', label='Vector 2')
+ax1.quiver(0, 0, suma[0], suma[1], angles='xy', scale_units='xy', scale=1, color='g', label='Suma')
+
+# Configurar límites y etiquetas del gráfico de la suma
+ax1.set_xlim(-10, 10)
+ax1.set_ylim(-10, 10)
+ax1.set_xlabel('Eje X')
+ax1.set_ylabel('Eje Y')
+ax1.legend()
+
+# Mostrar el gráfico de la suma
+plt.grid()
+
+
+# Crear una figura y ejes para la resta
+fig2, ax2 = plt.subplots()
+
+# Graficar la resta de los vectores
+ax2.quiver(0, 0, vector1[0], vector1[1], angles='xy', scale_units='xy', scale=1, color='r', label='Vector 1')
+ax2.quiver(0, 0, vector2[0], vector2[1], angles='xy', scale_units='xy', scale=1, color='b', label='Vector 2')
+ax2.quiver(vector1[0], vector1[1], -vector2[0], -vector2[1], angles='xy', scale_units='xy', scale=1, color='m', label='Resta')
+
+# Configurar límites y etiquetas del gráfico de la resta
+ax2.set_xlim(-10, 10)
+ax2.set_ylim(-10, 10)
+ax2.set_xlabel('Eje X')
+ax2.set_ylabel('Eje Y')
+ax2.legend()
+
+# Mostrar el gráfico de la resta
+plt.grid()
+
+
+# Crear una figura y ejes para la multiplicación por escalar
+fig3, ax3 = plt.subplots()
+
+# Graficar la multiplicación por escalar
+ax3.quiver(0, 0, vector1[0], vector1[1], angles='xy', scale_units='xy', scale=1, color='r', label='Vector 1')
+ax3.quiver(0, 0, mult_escalar[0], mult_escalar[1], angles='xy', scale_units='xy', scale=1, color='c', label='Multiplicación por escalar')
+
+# Configurar límites y etiquetas del gráfico de la multiplicación por escalar
+ax3.set_xlim(-10, 10)
+ax3.set_ylim(-10, 10)
+ax3.set_xlabel('Eje X')
+ax3.set_ylabel('Eje Y')
+ax3.legend()
+
+# Mostrar el gráfico de la multiplicación por escalar
+plt.grid()
+
+
+
+
+
+
 r'''
 # Interpretación Geométrica de los Vectores en $\mathbb{R}^2$ y $\mathbb{R}^3$
 
@@ -249,6 +327,18 @@ Por ejemplo, consideremos el vector $\mathbf{v} = (3, 4)$. Podemos trazar una fl
 
 Los vectores en $\mathbb{R}^2$ se utilizan para describir desplazamientos, velocidades, fuerzas y muchas otras magnitudes físicas. También se pueden sumar, restar y multiplicar por escalares. La suma de dos vectores se puede visualizar mediante la regla del paralelogramo, donde colocamos los vectores uno después del otro y trazamos un paralelogramo desde el origen hasta el punto final. La resta de vectores se puede visualizar como la suma de un vector y el opuesto del otro vector.
 
+
+'''
+
+st.pyplot(fig1)
+st.write('')
+st.pyplot(fig2)
+st.write('')
+st.pyplot(fig3)
+
+
+
+r'''
 ## Vectores en $\mathbb{R}^3$
 
 En $\mathbb{R}^3$, los vectores se representan como puntos en un espacio tridimensional. Cada vector tiene tres componentes, $x$, $y$ y $z$, que indican su posición en el espacio. Similar a $\mathbb{R}^2$, podemos interpretar un vector en $\mathbb{R}^3$ como una flecha que va desde el origen hasta el punto representado por sus componentes $x$, $y$ y $z$. La longitud de la flecha representa la magnitud del vector.
@@ -260,6 +350,147 @@ Los vectores en $\mathbb{R}^3$ son especialmente útiles en aplicaciones de geom
 iciones, velocidades, fuerzas, aceleraciones y otras magnitudes tridimensionales. Al igual que en $\mathbb{R}^2$, los vectores en $\mathbb{R}^3$ se pueden sumar, restar y multiplicar por escalares utilizando las mismas reglas que en $\mathbb{R}^2$.
 
 En resumen, la interpretación geométrica de los vectores en $\mathbb{R}^2$ y $\mathbb{R}^3$ nos permite visualizar y comprender su dirección y magnitud en el espacio. Estos conceptos son fundamentales para el estudio y la aplicación de los vectores en diversas áreas de las matemáticas, la física, la ingeniería y la informática.
+
+
+
+'''
+
+
+
+# Definir los vectores
+vector1d = np.array([2, 3, 4])
+vector2d = np.array([-1, 4, 2])
+
+# Definir un escalar
+escalard = 2
+
+# Calcular la suma de los vectores
+sumad = vector1d + vector2d
+
+# Calcular la resta de los vectores
+restad = vector1d - vector2d
+
+# Calcular la multiplicación por escalar
+mult_escalard = escalard * vector1d
+
+# Graficar la suma de los vectores
+fig1d = plt.figure()
+ax1d = fig1d.add_subplot(111, projection='3d')
+ax1d.quiver(0, 0, 0, vector1d[0], vector1d[1], vector1d[2], color='r', label='Vector 1')
+ax1d.quiver(0, 0, 0, vector2d[0], vector2d[1], vector2d[2], color='b', label='Vector 2')
+ax1d.quiver(0, 0, 0, sumad[0], sumad[1], sumad[2], color='g', label='Suma')
+ax1d.set_xlabel('Eje X')
+ax1d.set_ylabel('Eje Y')
+ax1d.set_zlabel('Eje Z')
+ax1d.set_xlim([-10, 10])
+ax1d.set_ylim([-10, 10])
+ax1d.set_zlim([-10, 10])
+ax1d.legend()
+
+# Graficar la resta de los vectores
+fig2d = plt.figure()
+ax2d = fig2d.add_subplot(111, projection='3d')
+ax2d.quiver(0, 0, 0, vector1d[0], vector1d[1], vector1d[2], color='r', label='Vector 1')
+ax2d.quiver(0, 0, 0, vector2d[0], vector2d[1], vector2d[2], color='b', label='Vector 2')
+ax2d.quiver(vector1d[0], vector1d[1], vector1d[2], -vector2d[0], -vector2d[1], -vector2d[2], color='m', label='Resta')
+ax2d.set_xlabel('Eje X')
+ax2d.set_ylabel('Eje Y')
+ax2d.set_zlabel('Eje Z')
+ax2d.set_xlim([-10, 10])
+ax2d.set_ylim([-10, 10])
+ax2d.set_zlim([-10, 10])
+ax2d.legend()
+
+# Graficar la multiplicación por escalar
+fig3d = plt.figure()
+ax3d = fig3d.add_subplot(111, projection='3d')
+ax3d.quiver(0, 0, 0, vector1d[0], vector1d[1], vector1d[2], color='r', label='Vector 1')
+ax3d.quiver(0, 0, 0, mult_escalard[0], mult_escalard[1], mult_escalard[2], color='c', label='Multiplicación por escalar')
+ax3d.set_xlabel('Eje X')
+ax3d.set_ylabel('Eje Y')
+ax3d.set_zlabel('Eje Z')
+ax3d.set_xlim([-10, 10])
+ax3d.set_ylim([-10, 10])
+ax3d.set_zlim([-10, 10])
+ax3d.legend()
+
+# Mostrar los gráficos
+st.pyplot(fig1d)
+st.write('')
+st.pyplot(fig2d)
+st.write('')
+st.pyplot(fig3d)
+st.write('')
+
+
+
+
+r'''
+# Proyecciones y Ángulos en Vectores en $\mathbb{R}^n$ y el Producto Cruz y Producto Mixto
+
+En el estudio del álgebra lineal, los conceptos de proyecciones, ángulos y productos cruz y mixto son fundamentales para comprender la geometría y las relaciones entre vectores en el espacio euclidiano $\mathbb{R}^n$. En este artículo, exploraremos estos conceptos y su aplicación en el ámbito vectorial.
+
+## Proyecciones
+
+La proyección de un vector sobre otro es una operación que nos permite descomponer un vector en una combinación de componentes paralelas y perpendiculares a otro vector dado. En el espacio $\mathbb{R}^n$, la proyección de un vector $\mathbf{v}$ sobre un vector $\mathbf{u}$ se puede calcular utilizando la fórmula de la proyección ortogonal:
+
+$$
+\text{Proy}_{\mathbf{u}}(\mathbf{v}) = \frac{\mathbf{v} \cdot \mathbf{u}}{\|\mathbf{u}\|^2} \cdot \mathbf{u}
+$$
+
+donde $\cdot$ denota el producto punto, $\|\mathbf{u}\|$ es la norma (longitud) del vector $\mathbf{u}$ y el resultado de la proyección es un vector que se encuentra en la dirección de $\mathbf{u}$.
+
+Además de la proyección ortogonal, también podemos hablar de la proyección de un vector sobre un plano o un subespacio. En estos casos, se utilizan métodos similares pero con algunas modificaciones para adaptarse a la dimensionalidad del espacio.
+
+## Ángulos entre Vectores
+
+El ángulo entre dos vectores $\mathbf{u}$ y $\mathbf{v}$ en el espacio $\mathbb{R}^n$ se puede calcular utilizando la fórmula del producto punto:
+
+$$
+\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}
+$$
+
+donde $\theta$ es el ángulo entre los vectores, $\cdot$ denota el producto punto y $\|\mathbf{u}\|$ y $\|\mathbf{v}\|$ son las normas (longitudes) de los vectores $\mathbf{u}$ y $\mathbf{v}$, respectivamente.
+
+El resultado de esta fórmula es el coseno del ángulo entre los vectores. Si deseamos obtener el ángulo en sí, podemos utilizar la función inversa del coseno (arcocoseno), generalmente expresado en radianes o grados.
+
+Los ángulos entre vectores nos permiten determinar la relación de orientación y dirección entre ellos, lo cual es útil en diversas aplicaciones, como la geometría, la física y la computación gráfica.
+
+## Producto Cruz
+
+El producto cruz es una operación que se aplica exclusivamente en el espacio tridimensional $\mathbb{R}^3$. El resultado del producto cruz entre dos vectores $\mathbf{u}$ y $\mathbf{v}$, denotado como $\mathbf{u} \times \mathbf{v}$, es un vector que es perpendicular a ambos vectores de entrada.
+
+El cálculo del producto cruz se puede realizar utilizando la siguiente fórmula:
+
+$$
+\mathbf{u} \times \mathbf{v} = \begin{bmatrix}
+u_2v_3 - u_3v_2 \\
+u_3v_1 - u_1v_3 \\
+u_1v_2 - u_2v_1 \\
+\end{bmatrix}
+$$
+
+donde $u_1, u_2, u_3$ son las componentes del vector $\mathbf{u}$ y $v_1, v_2, v_3$ son las componentes del vector $\mathbf{v}$.
+
+El vector resultante del producto cruz es perpendicular al plano definido por los vectores de entrada $\mathbf{u}$ y $\mathbf{v}$. Su dirección viene dada por la regla de la mano derecha, donde el pulgar representa la dirección del producto cruz.
+
+El producto cruz es utilizado en diversas áreas, como la física (momento angular), la geometría (área de un paralelogramo) y la representación gráfica de objetos tridimensionales.
+
+## Producto Mixto
+
+El producto mixto, también conocido como producto escalar triple, es una operación que involucra tres vectores en el espacio tridimensional $\mathbb{R}^3$. El resultado del producto mixto entre los vectores $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{w}$, denotado como $[\mathbf{u}, \mathbf{v}, \mathbf{w}]$, es un escalar que representa el volumen del paralelepípedo formado por los tres vectores.
+
+El cálculo del producto mixto se puede realizar utilizando la siguiente fórmula:
+
+$$
+[\mathbf{u}, \mathbf{v}, \mathbf{w}] = \mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})
+$$
+
+donde $\cdot$ denota el producto punto y $\times$ denota el producto cruz.
+
+El producto mixto tiene algunas propiedades interesantes. Por ejemplo, si el producto mixto es igual a cero, esto indica que los tres vectores son coplanares (se encuentran en un mismo plano). Además, el producto mixto es invariante bajo permutaciones cíclicas, lo que significa que no importa el orden en el que se tomen los vectores.
+
+El producto mixto es utilizado en diversas áreas, como la física (cálculo de torque), la geometría (volumen de un tetraedro) y la mecánica de fluidos (flujo volumétrico).
 
 
 '''

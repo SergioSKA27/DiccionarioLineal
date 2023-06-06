@@ -40,6 +40,17 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+st.subheader('Profesor: RIcardo Guzman Fuentes')
+
+r'''
+## Organizadores:
+
+### Alexia Fernadez Castañeda
+
+### Oscar David Davila Dominguez
+
+'''
+
 
 
 '''
@@ -94,15 +105,12 @@ st.markdown(
     - Diagonalización de matrices simétricas
     - Aplicaciones de los valores y vectores propios
 
-11. Aplicaciones del Álgebra Lineal
-    - Aplicaciones en ciencias de la computación
-    - Aplicaciones en física y ciencias de la ingeniería
-    - Aplicaciones en estadística y análisis de datos
 
 12. Apéndices
     - A. Álgebra Matricial
     - B. Vectores en n-Dimensiones
     - C. Teoremas y demostraciones
+    - D. Campos
 
 
 '''
