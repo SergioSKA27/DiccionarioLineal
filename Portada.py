@@ -108,7 +108,7 @@ r'''
 
 12. Apéndices
     - A. Álgebra Matricial
-    - B. Vectores en n-Dimensiones
+    - B. Transforaciones Lineales
     - C. Teoremas y demostraciones
     - D. Campos
 

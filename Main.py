@@ -1,7 +1,7 @@
 from st_pages import Page, show_pages, add_page_title
 
 # Optional -- adds the title and icon to the current page
-add_page_title()
+#add_page_title()
 
 # Specify what pages should be shown in the sidebar, and what their titles and icons
 # should be
@@ -20,8 +20,11 @@ show_pages(
         Page("eigenval.py", "10. Valores y Vectores Propios", ":books:"),
 
 
-
+        Page("Matrixapp.py", "Apéndice Álgebra Matricial", ":straight_ruler:"),
+        Page("Tlinearapp.py", "Apéndice Transforaciones Lineales", ":straight_ruler:"),
+        Page("Teo_and_dem.py", "Apéndice  Teoremas y demostraciones", ":notebook:"),
         Page("Campo.py", "Apéndice  Campos", ":notebook:"),
+
 
 
     ]
